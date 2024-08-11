@@ -1,0 +1,165 @@
+Important Formulas:- Lab:1:- 
+
+1. Cel to Fahrenheit:- (c_t * 9 / 5)+32;
+2. Fahrenheit to Cel:- (f_t - 32) * 5/9;
+3. distance between two point :- distance = math.sqrt(math.pow(x1-x2,2)+math.pow(y1-y2,2))
+
+for . point print:- print(f"Distance : {distance:.2f}")
+ 					
+
+4. second -> hour = int(s/3600)
+   second -> min = temp = S%3600
+	     m  = int(temp/60)
+   second -> s = s%60;
+	
+  __________________________	
+ |s-> h = int(s/3600);     |
+ |s-> m = temp = (s%3600); |
+ |	m = int(temp/60);  |
+ |s-> s  = s%60;           |
+ |_________________________|
+
+Lab:-2 
+
+max out of 2 with ternary oprator:- print(f"Number 1: {n1} is max") if n1 > n2 else print(f"Number 2: {n2} is max")
+max out of 3 with ternary opraotr:- max_number = n1 if (n1>n2 and n1>n3) else (n2 if n2>n3 else n3)
+Leap year :- if(year%4==0 and year%100!=0) or (year%400==0)
+max 4:-  	if num1 >= num2 and num1 >= num3 and num1 >= num4:
+    			maximum = num1
+		elif num2 >= num1 and num2 >= num3 and num2 >= num4:
+    			maximum = num2
+		elif num3 >= num1 and num3 >= num2 and num3 >= num4:
+    			maximum = num3
+		else:
+    			maximum = num4	
+
+Lab: 3:-
+
+first n Prime Number:-
+n = int(input("Enter the value of n: "))
+count = 0
+num = 2
+
+print("First", n, "prime numbers are:", end=" ")
+while count < n:
+    is_prime = True
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num, end=" ")
+        count += 1
+    num += 1
+
+********Palindrom Logic:-
+
+a = int(input("Enter Number:"))
+
+original_num = a;
+reverse_num = 0;
+
+while a > 0:
+    digit = a % 10
+    reverse_num = reverse_num*10 + digit
+    a = a // 10
+
+if original_num == reverse_num:
+    print(f"{original_num} is a palindrome.")
+else:
+    print(f"{original_num} is not a palindrome.")
+
+***********Sum of Series:- n(n+1)//2; 
+
+n = int(input("Enter the value of n: "))
+result = 0
+
+for i in range(1, n + 1):
+    result = result + i * (i + 1) // 2
+    
+print(f"The sum is: {result}")
+
+*********Min frequrncy in String 
+
+str_input = input("Enter String: ")
+
+char_frequency = {}
+
+for char in str_input:
+    char_frequency[char] = char_frequency.get(char, 0) + 1
+
+min_char = min(char_frequency, key=char_frequency.get)
+
+print(f"The character '{min_char}' has the minimum frequency of {char_frequency[min_char]} times.")
+
+Lab: -5 : 
+
+**************Largest element in list:- 
+	
+my_list = []
+print("Enter -1 to Stop....")
+
+while True:
+    num = int(input("Enter List Element:"))
+    
+    if num == -1:
+        break
+    else:
+        my_list.append(num)
+
+max_value = max(my_list)
+
+print("List of numbers:", my_list)
+print("Max of the numbers:", max_value)
+
+
+
+***************### 04) WAP to interchange first and last elements in list entered by a user.
+my_list = []
+print("Enter -1 to Stop....")
+
+while True:
+    num = int(input("Enter List Element:"))
+    
+    if num == -1:
+        break
+    else:
+        my_list.append(int(num)) 
+        
+print(f"List is :{my_list}")
+
+if len(my_list)>=2:
+    my_list[0],my_list[-1] = my_list[-1],my_list[0]
+    print('List after Changing:',my_list)
+else:
+    print("List should have at least 2 elements")
+        
+
+********************* 5) Duplicate from List:- 
+my_list = []
+print("Enter -1 to stop\n")
+
+while True:
+    num = int(input("Enter a number: "))
+    
+    if num == -1:
+        break
+
+    my_list.append(num)
+
+print("My list is: ",my_list)
+
+duplicates = []
+seen = []
+
+for number in my_list:
+    if number in seen:
+        if number not in duplicates:
+            duplicates.append(number)
+    else:
+        seen.append(number)
+
+if duplicates:
+    print("Duplicate elements:", duplicates)
+else:
+    print("No duplicate elements found.")
